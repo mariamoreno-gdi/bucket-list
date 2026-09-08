@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>summer_bucket_list.exe</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="desktop">
+
+  <!-- Overlay CRT: líneas de scan -->
+  <div class="crt" aria-hidden="true"></div>
+
+  <!-- Área de ventanas (flex-centered) -->
+  <div class="win-area">
+
+    <!-- Ventana principal -->
+    <main class="win win-main">
+      <div class="win-title" id="winTitle">
+        <span class="win-icon">💾</span>
+        <span class="win-title-text" id="titleText">summer_bucket_list.exe</span>
+        <div class="win-btns">
+          <button class="wbtn" tabindex="-1" aria-hidden="true">_</button>
+          <button class="wbtn" tabindex="-1" aria-hidden="true">□</button>
+          <button class="wbtn" tabindex="-1" aria-hidden="true">✕</button>
+        </div>
+      </div>
+      <div class="win-menubar">
+        <div class="menu-item" id="menuFile">
+          <span class="menu-item-label">File</span>
+          <div class="season-dropdown" id="fileDropdown" hidden>
+            <div class="drop-item" data-action="properties">Propiedades</div>
+            <div class="drop-item" data-action="clear">Borrar historial</div>
+            <div class="drop-sep"></div>
+            <div class="drop-item" data-action="close">Cerrar</div>
+          </div>
+        </div>
+        <div class="menu-item" id="menuEdit">
+          <span class="menu-item-label">Edit</span>
+          <div class="season-dropdown" id="seasonDropdown" hidden>
+            <div class="drop-item" data-season="auto">Automático</div>
+            <div class="drop-sep"></div>
+            <div class="drop-item" data-season="spring">Primavera</div>
+            <div class="drop-item" data-season="summer">Verano</div>
+            <div class="drop-item" data-season="autumn">Otoño</div>
+            <div class="drop-item" data-season="winter">Invierno</div>
+          </div>
+        </div>
+        <div class="menu-item" id="menuView">
+          <span class="menu-item-label">View</span>
+          <div class="season-dropdown" id="viewDropdown" hidden>
+            <div class="drop-item" data-wallpaper="bliss">Bliss</div>
+            <div class="drop-item" data-wallpaper="ascent">Ascent</div>
+            <div class="drop-item" data-wallpaper="autumn">Autumn</div>
+            <div class="drop-item" data-wallpaper="sunset">Sunset</div>
+            <div class="drop-item" data-wallpaper="tulips">Tulips</div>
+          </div>
+        </div>
+        <div class="menu-item" id="menuHelp">
+          <span class="menu-item-label">Help</span>
+          <div class="season-dropdown" id="helpDropdown" hidden>
+            <div class="drop-item" data-action="how">Cómo funciona</div>
+            <div class="drop-sep"></div>
+            <div class="drop-item" data-action="about">Sobre Bucket List</div>
+          </div>
+        </div>
+      </div>
+      <div class="win-body">
+        <div class="field-label" id="resultLabel">ESPERANDO IDEAS</div>
+        <div class="mission-box" aria-live="polite">
+          <p id="missionText">Pulsa el botón para proponerte un nuevo plan</p>
+        </div>
+        <div class="btn-row">
+          <button class="win-btn-action" id="rollBtn">
+            <span id="btnText">QUIERO UN NUEVO PLAN</span>
+          </button>
+          <button class="win-btn-icon" id="muteBtn" title="Silenciar">🔊</button>
+        </div>
+        <section id="cooldown" class="cooldown" hidden>
+          <div class="cooldown-row">
+            <span class="field-label" id="cooldownLabel">MINUTOS HASTA TU SIGUIENTE PLAN</span>
+            <span id="timer" class="timer">60:00</span>
+          </div>
+          <div class="pb-track"><div class="pb-fill" id="barFill" style="width:100%"></div></div>
+        </section>
+      </div>
+      <div class="win-statusbar">
+        <div class="status-cell" id="statusText">Nuevo plan disponible</div>
+        <div class="status-cell status-right">✦ v2.0</div>
+      </div>
+    </main>
+
+  </div><!-- /win-area -->
+
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <button class="start-btn">
+      <span class="win-logo">⊞</span> Start
+    </button>
+    <div class="tb-sep"></div>
+    <div class="tb-item tb-item--active" id="taskbarItem">💾 bucket_list.exe</div>
+    <div class="tb-clock" id="clock">00:00</div>
+  </div>
+
+</div><!-- /desktop -->
+
+<script src="bucketlist.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
